@@ -1,0 +1,109 @@
+object YARAllamaWindow: TYARAllamaWindow
+  Left = 302
+  Height = 439
+  Top = 159
+  Width = 695
+  BorderStyle = bsDialog
+  Caption = 'YARA Llama'
+  ClientHeight = 439
+  ClientWidth = 695
+  OnCreate = FormCreate
+  LCLVersion = '2.0.12.0'
+  object edtDirectory: TEdit
+    Left = 8
+    Height = 26
+    Top = 24
+    Width = 208
+    TabOrder = 0
+    Text = 'edtDirectory'
+  end
+  object btnBrowse: TButton
+    Left = 216
+    Height = 25
+    Top = 25
+    Width = 75
+    Caption = 'Browse'
+    OnClick = btnBrowseClick
+    TabOrder = 1
+  end
+  object btnRunLlama: TButton
+    Left = 8
+    Height = 35
+    Top = 56
+    Width = 680
+    Caption = 'Run YARA Llama'
+    OnClick = btnRunLlamaClick
+    TabOrder = 2
+  end
+  object lblSelectScripts: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 121
+    Caption = 'Select script directory'
+    ParentColor = False
+  end
+  object edtTargetFile: TEdit
+    Left = 367
+    Height = 26
+    Top = 24
+    Width = 200
+    TabOrder = 3
+    Text = 'edtTargetFile'
+  end
+  object lblSelectFile: TLabel
+    Left = 367
+    Height = 15
+    Top = 5
+    Width = 91
+    Caption = 'Select target file'
+    ParentColor = False
+  end
+  object btnSelectTarget: TButton
+    Left = 568
+    Height = 25
+    Top = 24
+    Width = 75
+    Caption = 'Select'
+    OnClick = btnSelectTargetClick
+    TabOrder = 4
+  end
+  object resultsWindow: TMemo
+    Left = 8
+    Height = 336
+    Top = 96
+    Width = 680
+    Font.Quality = fqCleartypeNatural
+    Lines.Strings = (
+      'resultsWindow'
+    )
+    ParentFont = False
+    ScrollBars = ssAutoVertical
+    TabOrder = 5
+  end
+  object dlgSelectDirectory: TSelectDirectoryDialog
+    Left = 528
+    Top = 120
+  end
+  object dlgSelectFile: TOpenDialog
+    Left = 520
+    Top = 176
+  end
+  object Process1: TProcess
+    PipeBufferSize = 2048
+    Active = False
+    Options = [poUsePipes]
+    Priority = ppNormal
+    StartupOptions = []
+    ShowWindow = swoNone
+    WindowColumns = 0
+    WindowHeight = 0
+    WindowLeft = 0
+    WindowRows = 0
+    WindowTop = 0
+    WindowWidth = 0
+    FillAttribute = 0
+    Left = 512
+    Top = 240
+  end
+end
