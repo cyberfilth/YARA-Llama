@@ -83,7 +83,8 @@ begin
     while (DosError = 0) do
     begin
       SetLength(ListOfFiles, Length(ListOfFiles) + 1); // Increase the list
-      ListOfFiles[High(ListOfFiles)] := SearchResult.Name; // Add it at the end of the list
+      ListOfFiles[High(ListOfFiles)] := SearchResult.Name;
+      // Add it at the end of the list
       FindNext(SearchResult);
     end;
     FindClose(SearchResult);
@@ -93,8 +94,13 @@ begin
     begin
       scriptName := edtDirectory.Text + DirectorySeparator + ListOfFiles[i];
       RunCommand('/bin/yara', [scriptName, targetName], outputString);
-      resultsWindow.Lines.Add(ListOfFiles[i]);
-      resultsWindow.Lines.Add(outputString);
+      if (outputString = '') then
+        resultsWindow.Lines.Add(ListOfFiles[i] + ' - No results found')
+      else
+      begin
+        resultsWindow.Lines.Add(LineEnding + ListOfFiles[i]);
+        resultsWindow.Lines.Add(outputString);
+      end;
     end;
   end
   else
