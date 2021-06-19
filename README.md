@@ -9,7 +9,7 @@ The YARA Forensics repo at <https://github.com/Xumeiquer/yara-forensics> is a go
 
 This version of YARA Llama currently only works on Linux, it can be downloaded from the releases page.
 
-[Download the Linux version here](https://github.com/cyberfilth/YARA-Llama/releases/download/0.4/YLlama-Linux.zip)
+[Download the Linux version here](https://github.com/cyberfilth/YARA-Llama/releases/download/0.5/YLlama0.5-Linux.zip)
 
 ![Ubuntu screenshot](GITimages/YARA-Llama-screenshot.png)
 
